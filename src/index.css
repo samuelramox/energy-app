@@ -1,7 +1,11 @@
+/* Headers line */
+
 hr {
   height: 1px;
   width: 360px;
 }
+
+/* Material Icons */
 
 .material-icons {
   font-family: 'Material Icons';
