@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import "./index.css"
 
 
 class Footer extends Component {
   render() {
     return (
-      <footer className="bg-secondary text-light">
-        <p>SENAI Energia © 2018. Direitos reservados. </p>
+      <footer className="bg-primary text-light w-100 p-2">
+        <p className="my-1 mx-4">© Desenvolvido por SENAI-SP</p>
       </footer>
       );
   }

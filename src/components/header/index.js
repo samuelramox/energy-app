@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Media } from 'reactstrap';
+import { Navbar, Nav, NavItem, NavLink } from 'reactstrap';
 
 class Header extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      active: 'home',
+    }
 
     this.toggle = this.toggle.bind(this);
     this.state = {
@@ -15,32 +18,33 @@ class Header extends Component {
       isOpen: !this.state.isOpen
     });
   }
+
+  handleClick = (e) => {
+    console.log('click ', e);
+    this.setState({
+      active: e.key,
+    });
+  }
+
+
   render() {
     return (
       <div>
-        <Navbar color="secondary" light expand="md">
-          <NavbarBrand>
-            <Media left href="#">
-              <Media object data-src="../../img/logo-senai.jpg" alt="logo" />
-            </Media>
-          </NavbarBrand>
-          <NavbarToggler onClick={ this.toggle } />
-          <Collapse isOpen={ this.state.isOpen } navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/">Home</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/">Cadastrar Agência</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/">Cadastrar Aparelhos</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/">Listar Aparelhos</NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
+        <Navbar color="transparent" className="border border-top-0 border-right-0 border-left-0 border-secondary px-0">
+          <Nav className="ml-auto" onClick={ this.handleClick } selectedKeys={ [this.state.isActive] }>
+            <NavItem key="home">
+              <NavLink href="/">Home</NavLink>
+            </NavItem>
+            <NavItem key="sobre">
+              <NavLink href="/">Sobre</NavLink>
+            </NavItem>
+            <NavItem key="simulador">
+              <NavLink href="/">Simulador</NavLink>
+            </NavItem>
+            <NavItem key="resultado">
+              <NavLink href="/">Resultado</NavLink>
+            </NavItem>
+          </Nav>
         </Navbar>
       </div>
       );
