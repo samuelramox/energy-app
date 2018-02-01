@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Col, Button, ButtonGroup, Form, FormGroup, Label, Input, FormText, Container, Row } from 'reactstrap';
+import { Col, Button, ButtonGroup, Form, FormGroup, Label, Input, Container, Row } from 'reactstrap';
 
 
 class Produtos extends Component {
@@ -25,22 +25,23 @@ class Produtos extends Component {
     });
   }
 
+
   render() {
     return (
-      <div className="bg-white p-1 mb-4 text-primary small">
+      <div className="bg-white p-1 mb-4 text-blueYale small">
         <Form>
           <FormGroup>
             <Container className="font-weight-bold">
               <Row>
-                <Col lg={ 4 } md={ 6 } xs={ 12 } sm={ 12 } className="mt-3">
+                <Col lg={ 4 } md={ 6 } sm={ 12 } xs={ 12 } className="mt-3">
                 <Label for="nome">Nome</Label>
                 <Input name="nome" id="nome" placeholder="Ex: Geladeira" />
                 </Col>
-                <Col lg={ 3 } md={ 3 } xs={ 6 } sm={ 6 } className="mt-3">
+                <Col lg={ 3 } md={ 3 } sm={ 6 } xs={ 6 } className="mt-3">
                 <Label for="potencia">Potência(Watts)</Label>
                 <Input name="potencia" id="potencia" placeholder="Ex: 200" />
                 </Col>
-                <Col lg={ 2 } md={ 3 } xs={ 6 } sm={ 6 } className="mt-3">
+                <Col lg={ 2 } md={ 3 } sm={ 6 } xs={ 6 } className="mt-3">
                 <Label for="quantidade">Quantidade</Label>
                 <Input type="number" name="quantidade" id="quantidade" placeholder="Ex: 01" />
                 </Col>
@@ -48,19 +49,19 @@ class Produtos extends Component {
             </Container>
             <Container className="font-weight-bold">
               <Row>
-                <Col lg={ 2 } md={ 4 } xs={ 12 } sm={ 12 } className="mt-3">
+                <Col lg={ 2 } md={ 4 } sm={ 12 } xs={ 12 } className="mt-3">
                 <Label for="diaTodo" className="d-block">Usa o dia todo?</Label>
-                <Button id="diaTodo">Switch</Button>
+                <Button />
                 </Col>
-                <Col lg={ 2 } md={ 4 } xs={ 6 } sm={ 6 } className="mt-3">
+                <Col lg={ 2 } md={ 4 } sm={ 6 } xs={ 6 } className="mt-3">
                 <Label for="horario">Horário em que liga?</Label>
                 <Input type="time" name="horario" id="horario" className="text-center" />
                 </Col>
-                <Col lg={ 2 } md={ 4 } xs={ 6 } sm={ 6 } className="mt-3">
+                <Col lg={ 2 } md={ 4 } sm={ 6 } xs={ 6 } className="mt-3">
                 <Label for="tempo">Quanto tempo ligado?</Label>
                 <Input type="time" name="tempo" id="tempo" className="text-center" />
                 </Col>
-                <Col lg={ 3 } md={ 6 } xs={ 12 } sm={ 12 } className="mt-3">
+                <Col lg={ 3 } md={ 6 } sm={ 12 } xs={ 12 } className="mt-3">
                 <Label for="tempo">Marque os dias de uso:</Label>
                 <ButtonGroup>
                   <Button color="primary" onClick={ () => this.onCheckboxBtnClick(1) } active={ this.state.cSelected.includes(1) }>D</Button>
@@ -79,9 +80,9 @@ class Produtos extends Component {
               </Row>
             </Container>
           </FormGroup>
-          <Container className="mb-3">
+          <Container className="my-2">
             <Row>
-              <Col className="d-flex align-items-center flex-column m-auto mb-3">
+              <Col className="d-flex align-items-center flex-column">
               <Button color="success">ADICIONAR</Button>
               </Col>
             </Row>

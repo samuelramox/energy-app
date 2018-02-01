@@ -30,19 +30,19 @@ class Header extends Component {
   render() {
     return (
       <div>
-        <Navbar color="transparent" className="border border-top-0 border-right-0 border-left-0 border-secondary px-0">
+        <Navbar className="border border-dark border-top-0 border-right-0 border-left-0 pr-2 pl-0" style={ { fontSize: '0.8rem', fontWeight: 'bold' } }>
           <Nav className="ml-auto" onClick={ this.handleClick } selectedKeys={ [this.state.isActive] }>
             <NavItem key="home">
-              <NavLink href="/">Home</NavLink>
+              <NavLink href="/" className="text-dark">HOME</NavLink>
             </NavItem>
             <NavItem key="sobre">
-              <NavLink href="/">Sobre</NavLink>
+              <NavLink href="/" className="text-dark">SOBRE</NavLink>
             </NavItem>
             <NavItem key="simulador">
-              <NavLink href="/">Simulador</NavLink>
+              <NavLink href="/" className="text-dark">SIMULADOR</NavLink>
             </NavItem>
             <NavItem key="resultado">
-              <NavLink href="/">Resultado</NavLink>
+              <NavLink href="/" className="text-dark">RESULTADO</NavLink>
             </NavItem>
           </Nav>
         </Navbar>

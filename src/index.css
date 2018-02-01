@@ -1,17 +1,10 @@
-/* Headers line */
-
-hr {
-  height: 1px;
-  width: 360px;
-}
-
 /* Material Icons */
 
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 150px;
+  font-size: 9rem;
   display: inline-block;
   line-height: 1;
   text-transform: none;
@@ -27,6 +20,7 @@ hr {
   -moz-osx-font-smoothing: grayscale;
   /* Support for IE. */
   font-feature-settings: 'liga';
+  margin: 0;
 }
 
 .material-icons-small {
@@ -48,4 +42,42 @@ hr {
   outline: none;
   background-color: transparent;
   padding: 0% !important;
+}
+
+/* Buttons */
+
+.btn-blue {
+  background-color: #0F499B !important;
+  color: #FFF !important;
+  border: #0F499B !important;
+}
+
+.btn-white {
+  background-color: #FFF !important;
+  color: #0F499B !important;
+  border: #FFF !important;
+}
+
+/* Text Colors */
+
+.text-blueYale {
+  color: #0F499B;
+}
+
+.text-blueSail {
+  color: #BCE0FD;
+}
+
+/* Background colors */
+
+.bg-blueYale {
+  background-color: #0F499B !important;
+}
+
+.bg-blueSail {
+  background-color: #BCE0FD !important;
+}
+
+.bg-blueGlaucous {
+  background-color: #5B82BA !important;
 }

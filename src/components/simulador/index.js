@@ -10,25 +10,25 @@ import Tabela from '../tabela'
 class Simulador extends Component {
   render() {
     return (
-      <div className="table-info">
+      <div className="bg-blueGlaucous">
         <Header />
-        <Container className="mb-2">
+        <Container className="mt-3 mb-2">
           <Row>
-            <Col className="d-flex align-items-center flex-column m-auto">
-            <h1 className="mt-3 text-center text-white">Cadastre seus aparelhos</h1>
-            <hr className="mt-1 border-5 bg-secondary" />
+            <Col className="d-flex align-items-center flex-column">
+            <h1 className="text-center text-white">Cadastre seus aparelhos</h1>
+            <hr className="mt-0 bg-white" style={ { width: '360px' } } />
             <Distribuidoras/>
             </Col>
           </Row>
         </Container>
-        <Container className="mb-5">
+        <Container className="mb-2">
           <Row>
-            <Col className="d-flex align-items-center flex-column m-auto">
+            <Col className="d-flex align-items-center flex-column">
             <Produtos/>
             <Tabela />
             <Container className="mb-3">
               <Row>
-                <Col className="d-flex align-items-center flex-column m-auto mb-3">
+                <Col className="d-flex align-items-center flex-column">
                 <Button color="success">CALCULAR</Button>
                 </Col>
               </Row>

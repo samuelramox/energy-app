@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { Table, Button, Container, Row, Col } from 'reactstrap';
+import { Table, Button } from 'reactstrap';
 
 
 class Tabela extends Component {
   render() {
     return (
       <Table responsive hover>
-        <thead className="bg-white text-primary small">
+        <thead className="bg-white text-blueYale small">
           <tr>
             <th className="text-center">#</th>
             <th>NOME</th>
@@ -19,7 +19,7 @@ class Tabela extends Component {
             <th className="text-center"></th>
           </tr>
         </thead>
-        <tbody className="table-primary text-primary small font-weight-bold">
+        <tbody className="bg-blueSail text-blueYale small font-weight-bold">
           <tr>
             <th scope="row" className="text-center">1</th>
             <td>Geladeira</td>
