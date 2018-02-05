@@ -1,0 +1,60 @@
+/* Switch Button */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 35px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  border-radius: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: .4s;
+  cursor: pointer;
+  background-color: #BCE0FD;
+}
+
+.slider:before {
+  position: absolute;
+  border-radius: 50%;
+  content: "";
+  height: 28px;
+  width: 28px;
+  left: 4px;
+  top: 4px;
+  background-color: #FFF;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: #00B256;
+}
+
+input:checked+.slider:before {
+  transform: translateX(33px);
+}
+
+.switchTextLeft {
+  line-height: 3;
+  margin-left: 8px;
+  color: #FFF;
+  font-size: 0.75rem;
+  display: inline;
+}
+
+.switchTextRight {
+  line-height: 3;
+  margin-left: 7px;
+  color: #FFF;
+  font-size: 0.75rem;
+  display: inline;
+}
