@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Col, Button, ButtonGroup, Form, FormGroup, Label, Input, Container, Row } from 'reactstrap';
+import Switch from '../switch';
 
 
 class Produtos extends Component {
@@ -51,7 +52,7 @@ class Produtos extends Component {
               <Row>
                 <Col lg={ 2 } md={ 4 } sm={ 12 } xs={ 12 } className="mt-3">
                 <Label for="diaTodo" className="d-block">Usa o dia todo?</Label>
-                <Button />
+                <Switch/>
                 </Col>
                 <Col lg={ 2 } md={ 4 } sm={ 6 } xs={ 6 } className="mt-3">
                 <Label for="horario">Horário em que liga?</Label>

@@ -36,13 +36,13 @@ class Header extends Component {
               <NavLink href="/" className="text-dark">HOME</NavLink>
             </NavItem>
             <NavItem key="sobre">
-              <NavLink href="/" className="text-dark">SOBRE</NavLink>
+              <NavLink href="/sobre" className="text-dark">SOBRE</NavLink>
             </NavItem>
             <NavItem key="simulador">
-              <NavLink href="/" className="text-dark">SIMULADOR</NavLink>
+              <NavLink href="/simulador" className="text-dark">SIMULADOR</NavLink>
             </NavItem>
             <NavItem key="resultado">
-              <NavLink href="/" className="text-dark">RESULTADO</NavLink>
+              <NavLink href="/resultado" className="text-dark">RESULTADO</NavLink>
             </NavItem>
           </Nav>
         </Navbar>

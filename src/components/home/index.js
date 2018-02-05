@@ -17,10 +17,10 @@ class Home extends Component {
             <hr className="mt-3" style={ { border: '1px solid white', width: '40%' } } />
             <h3 className="mt-5 text-center text-white">Economize na conta de luz usando nosso simulador</h3>
             <Row>
-              <Button size="lg" href="/" className="mt-5 mx-3 btn-blue">
+              <Button size="lg" className="mt-5 mx-3 btn-blue" href="/simulador">
                 CALCULAR
               </Button>
-              <Button size="lg" href="/" className="mt-5 mx-3 btn-white">
+              <Button size="lg" className="mt-5 mx-3 btn-white" href="/sobre">
                 LEIA MAIS
               </Button>
             </Row>

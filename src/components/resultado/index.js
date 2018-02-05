@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import { Button, Container, Row, Col, Card, CardHeader, CardBody, CardText } from 'reactstrap'
-import Header from '../header'
-import Footer from '../footer'
 
 
 class Resultado extends Component {
   render() {
     return (
       <div>
-        <Header />
         <Container className="mt-3 mb-2">
           <Row>
             <Col className="d-flex align-items-center flex-column">
@@ -18,7 +15,7 @@ class Resultado extends Component {
             </Col>
           </Row>
         </Container>
-        <Container className="mt-4 mb-2">
+        <Container className="my-5">
           <Row>
             <Col lg={ { size: 4, order: 1 } }>
             <Card className="pb-5 mb-3">
@@ -55,7 +52,6 @@ class Resultado extends Component {
             </Col>
           </Row>
         </Container>
-        <Footer/>
       </div>
       );
   }

@@ -1,18 +1,14 @@
 import React, { Component } from 'react';
-import Home from '../home'
-import Sobre from '../sobre'
-import Simulador from '../simulador'
-import Resultado from '../resultado'
-
+import { BrowserRouter } from 'react-router-dom'
+import HomeLayout from '../homeLayout'
 
 class App extends Component {
   render() {
     return (
       <div>
-         <Home />
-        <Sobre />
-        <Simulador />
-        <Resultado />
+        <BrowserRouter>
+          <HomeLayout />
+        </BrowserRouter>
       </div>
       );
   }

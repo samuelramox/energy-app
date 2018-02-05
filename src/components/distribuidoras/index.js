@@ -19,7 +19,7 @@ export default class Distribuidoras extends React.Component {
 
   render() {
     return (
-      <div className="d-flex align-items-center flex-column my-2">
+      <div className="d-flex align-items-center flex-column my-3">
         <h5 className="text-white">Selecione sua distribuida de energia aqui</h5>
         <ButtonDropdown isOpen={ this.state.dropdownOpen } toggle={ this.toggle }>
           <DropdownToggle caret className="px-5 btn-white font-weight-bold">

@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import { Button, Container, Row, Col, Card, CardText, CardBody, CardTitle } from 'reactstrap'
-import Header from '../header'
-import Footer from '../footer'
 
 
 class Sobre extends Component {
   render() {
     return (
       <div>
-        <Header />
-        <Container className="mt-3 mb-2">
+        <Container className="mt-3">
           <Row>
             <Col className="d-flex align-items-center flex-column">
             <h1 className="text-center text-blueYale">Entenda a Tarifa Branca</h1>
@@ -18,7 +15,7 @@ class Sobre extends Component {
             </Col>
           </Row>
         </Container>
-        <Container className="mb-2">
+        <Container className="mb-4">
           <Row>
             <Col lg={ { size: 4, order: 1 } }>
             <Card className="text-center text-blueYale border-0">
@@ -55,11 +52,10 @@ class Sobre extends Component {
           <Row>
             <Col className="d-flex align-items-center flex-column">
             <h4 className="mb-3 text-center text-blueYale">Use nosso simulador e economize!</h4>
-            <Button color="success" className="px-5">FAZER SIMULAÇÃO</Button>
+            <Button color="success" className="px-5" href="/simulador">FAZER SIMULAÇÃO</Button>
             </Col>
           </Row>
         </Container>
-        <Footer />
       </div>
       );
   }
