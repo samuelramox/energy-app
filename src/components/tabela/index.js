@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Table, Button } from 'reactstrap';
+import PropTypes from 'prop-types';
+import { Table } from 'reactstrap';
 
 
 class Tabela extends Component {
@@ -29,12 +30,24 @@ class Tabela extends Component {
             <td className="text-center">02:00</td>
             <td className="text-center">0.99</td>
             <td className="text-center">@mdo</td>
-            <Button className="button-icon" outline color="link"><i class="material-icons-small text-danger">remove_circle</i></Button>
+            <button className="button-icon"><i class="material-icons-small text-danger">remove_circle</i></button>
           </tr>
         </tbody>
       </Table>
       );
   }
 }
+
+Table.propTypes = {
+  // Pass in a Component to override default element
+  tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+  size: PropTypes.string,
+  bordered: PropTypes.bool,
+  striped: PropTypes.bool,
+  dark: PropTypes.bool,
+  hover: PropTypes.bool,
+  responsive: PropTypes.bool
+};
+
 
 export default Tabela

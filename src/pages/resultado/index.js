@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Button, Container, Row, Col, Card, CardHeader, CardBody, CardText } from 'reactstrap'
 
 
@@ -6,7 +7,7 @@ class Resultado extends Component {
   render() {
     return (
       <div>
-        <Container className="mt-3 mb-2">
+        <Container className="mt-3">
           <Row>
             <Col className="d-flex align-items-center flex-column">
             <h1 className="text-center text-blueYale">Resultado</h1>
@@ -15,7 +16,7 @@ class Resultado extends Component {
             </Col>
           </Row>
         </Container>
-        <Container className="my-5">
+        <Container className="mt-5">
           <Row>
             <Col lg={ { size: 4, order: 1 } }>
             <Card className="pb-5 mb-3">
@@ -56,5 +57,85 @@ class Resultado extends Component {
       );
   }
 }
+
+
+Button.propTypes = {
+  active: PropTypes.bool,
+  block: PropTypes.bool,
+  color: PropTypes.string, // default: 'secondary'
+  disabled: PropTypes.bool,
+
+  // Pass in a Component to override default button element
+  // example: react-router Link
+  // default: 'button'
+  tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+
+  onClick: PropTypes.func,
+  size: PropTypes.string
+}
+
+Container.propTypes = {
+  fluid: PropTypes.bool
+// applies .container-fluid class
+}
+
+Row.propTypes = {
+  noGutters: PropTypes.bool
+}
+
+const stringOrNumberProp = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
+const columnProps = PropTypes.oneOfType([
+  PropTypes.string,
+  PropTypes.number,
+  PropTypes.bool,
+  PropTypes.shape({
+    size: PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.string]),
+    // example size values:
+    // 12 || "12" => col-12 or col-`width`-12
+    // auto => col-auto or col-`width`-auto
+    // true => col or col-`width`
+    order: stringOrNumberProp,
+    offset: stringOrNumberProp
+  })
+]);
+
+Col.propTypes = {
+  xs: columnProps,
+  sm: columnProps,
+  md: columnProps,
+  lg: columnProps,
+  xl: columnProps,
+  // override the predefined width (the ones above) with your own custom widths.
+  // see https://github.com/reactstrap/reactstrap/issues/297#issuecomment-273556116
+  widths: PropTypes.array,
+}
+
+Card.propTypes = {
+  // Pass in a Component to override default element
+  tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+  inverse: PropTypes.bool,
+  color: PropTypes.string,
+  body: PropTypes.bool,
+  className: PropTypes.string
+};
+
+CardBody.propTypes = {
+  // Pass in a Component to override default element
+  tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+  className: PropTypes.string
+};
+
+CardText.propTypes = {
+  // Pass in a Component to override default element
+  tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+  className: PropTypes.string
+};
+
+CardHeader.propTypes = {
+  // Pass in a Component to override default element
+  tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+  className: PropTypes.string
+};
+
 
 export default Resultado;

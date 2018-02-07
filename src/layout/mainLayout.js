@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Header from './header'
-import Sobre from './sobre'
-import Simulador from './simulador'
-import Resultado from './resultado'
-import Footer from './footer'
+import Header from '../components/header'
+import Sobre from '../pages/sobre'
+import Simulador from '../pages/simulador'
+import Resultado from '../pages/resultado'
+import Footer from '../components/footer'
 import { Route, Switch } from 'react-router-dom'
 
 

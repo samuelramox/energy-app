@@ -7,10 +7,10 @@ class Switch extends Component {
     return (
       <label className="switch">
         <input type="checkbox" />
-        <span className="slider">
-                <div className="switchTextLeft">SIM</div>
-                <div className="switchTextRight">NAO</div>
-              </span>
+        <div className="slider">
+          <span className="switchTextLeft">SIM</span>
+          <span className="switchTextRight">NAO</span>
+        </div>
       </label>
       );
   }
