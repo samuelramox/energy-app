@@ -36,39 +36,39 @@ class Produtos extends Component {
             <Container className="font-weight-bold">
               <Row>
                 <Col lg={ 4 } md={ 6 } sm={ 12 } xs={ 12 } className="mt-3">
-                <Label for="nome">Nome</Label>
-                <Input name="nome" id="nome" placeholder="Ex: Geladeira" />
+                <Label for="name">Nome</Label>
+                <Input name="name" id="name" placeholder="Ex: Geladeira" />
                 </Col>
                 <Col lg={ 3 } md={ 3 } sm={ 6 } xs={ 6 } className="mt-3">
-                <Label for="potencia">Potência(Watts)</Label>
-                <Input name="potencia" id="potencia" placeholder="Ex: 200" />
+                <Label for="potency">Potência(Watts)</Label>
+                <Input name="potency" id="potency" placeholder="Ex: 200" />
                 </Col>
                 <Col lg={ 2 } md={ 3 } sm={ 6 } xs={ 6 } className="mt-3">
-                <Label for="quantidade">Quantidade</Label>
-                <Input type="number" name="quantidade" id="quantidade" placeholder="Ex: 01" />
+                <Label for="quantity">Quantidade</Label>
+                <Input type="number" name="quantity" id="quantity" placeholder="Ex: 01" />
                 </Col>
               </Row>
             </Container>
             <Container className="font-weight-bold">
               <Row>
                 <Col lg={ 2 } md={ 4 } sm={ 12 } xs={ 12 } className="mt-3 col-meia">
-                <Label for="diaTodo" className="d-block">Usa o dia todo?</Label>
+                <Label for="allDay" className="d-block">Usa o dia todo?</Label>
                 <Switch/>
                 </Col>
                 <Col lg={ 2 } md={ 4 } sm={ 6 } xs={ 6 } className="mt-3">
-                <Label for="horario">Horário em que liga?</Label>
-                <Input type="time" name="horario" id="horario" className="text-center" />
+                <Label for="timeOn">Horário em que liga?</Label>
+                <Input type="time" name="timeOn" id="timeOn" className="text-center" />
                 </Col>
                 <Col lg={ 2 } md={ 4 } sm={ 6 } xs={ 6 } className="mt-3">
-                <Label for="tempo">Quanto tempo ligado?</Label>
-                <Input type="time" name="tempo" id="tempo" className="text-center" />
+                <Label for="longOn">Quanto tempo ligado?</Label>
+                <Input type="time" name="longOn" id="longOn" className="text-center" />
                 </Col>
                 <Col lg={ 2 } md={ 4 } sm={ 12 } xs={ 12 } className="mt-3 col-meia">
-                <Label for="semanaToda" className="d-block">Todos os dias?</Label>
-                <Switch/>
+                <Label for="everyWeek" className="d-block">Todos os dias?</Label>
+                <Switch id="everyWeek" />
                 </Col>
                 <Col lg={ 3 } md={ 6 } sm={ 12 } xs={ 12 } className="mt-3">
-                <Label for="tempo" className="mr-2">Marque os dias de uso:</Label>
+                <Label for="useDays" className="mr-2">Marque os dias de uso:</Label>
                 <ButtonGroup>
                   <Button color="primary" onClick={ () => this.onCheckboxBtnClick(1) } active={ this.state.cSelected.includes(1) }>D</Button>
                   <Button color="primary" onClick={ () => this.onCheckboxBtnClick(2) } active={ this.state.cSelected.includes(2) }>S</Button>
@@ -81,7 +81,7 @@ class Produtos extends Component {
                 </Col>
                 <Col lg={ 2 } md={ 12 } xs={ 12 } sm={ 12 } className="d-flex justify-content-center align-items-center mt-3">
                 <button className="button-icon ml-4"><i class="material-icons-small text-success">add_circle</i></button>
-                <Label for="diaTodo" className="ml-2 mt-2">Adicione outro horário</Label>
+                <Label for="" className="ml-2 mt-2">Adicione outro horário</Label>
                 </Col>
               </Row>
             </Container>
