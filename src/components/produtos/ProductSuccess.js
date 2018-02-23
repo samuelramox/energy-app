@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Col, Container, Row, Button, ButtonGroup, Form, FormGroup, Input, Label } from 'reactstrap';
 import Tabela from '../tabela'
-import Switch from '../switch';
+import Switch from '../Switch';
 
 
 class ProductSuccess extends Component {
@@ -14,17 +14,24 @@ class ProductSuccess extends Component {
     };
   }
 
-  handleSubmit = (form) => {
-    form.preventDefault();
-    var serialize = require('form-serialize');
-    var form = document.querySelector('#product-form');
-    var obj = serialize(form, {
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const serialize = require('form-serialize');
+    let form = document.querySelector('#product-form');
+    const obj = serialize(form, {
       hash: true
     });
-    console.log(obj)
+    const {cSelected} = this.props;
+    const dayvalues = cSelected.length;
+
+    var finalObj = {
+      id: 10000 * Math.random().toFixed(4),
+      dayvalues,
+      ...obj
+    };
     this.setState((prevState) => ({
-      formList: prevState.formList.concat(obj)
-    }))
+      formList: prevState.formList.concat(finalObj)
+    }));
   }
 
   removeObj = (item) => {
@@ -34,12 +41,17 @@ class ProductSuccess extends Component {
     }))
   }
 
+  calcObj = (item) => {
+    this.setState((prevState) => ({
+      formList: prevState.formList.filter((c) => c.id !== item.id
+      )
+    }))
+  }
 
   render() {
     const {data, cSelected, onCheckboxBtnClick} = this.props;
     // console.log(data)
     var dayvalues = cSelected.length;
-    console.log(dayvalues)
     return (
       <div className="p-1 mb-4 text-blueYale small">
         <Form id='product-form' onSubmit={ this.handleSubmit } className="bg-white">
@@ -71,7 +83,7 @@ class ProductSuccess extends Component {
                 <Input type="time" name="timeOn" id="timeOn" className="text-center" />
                 </Col>
                 <Col lg={ 2 } md={ 4 } sm={ 6 } xs={ 6 } className="mt-3">
-                <Label for="longOn">Quanto tempo ligado?</Label>
+                <Label for="longOn">Quando desliga?</Label>
                 <Input type="time" name="longOn" id="longOn" className="text-center" />
                 </Col>
                 <Col lg={ 2 } md={ 4 } sm={ 12 } xs={ 12 } className="mt-3 col-meia">
@@ -105,7 +117,7 @@ class ProductSuccess extends Component {
             </Container>
           </FormGroup>
         </Form>
-        <Tabela data={ this.state.formList } removeObj={ this.state.removeObj } />
+        <Tabela data={ this.state.formList } removeObj={ this.removeObj } />
         <Container className="mb-5 mt-1">
           <Row>
             <Col className="d-flex align-items-center flex-column">

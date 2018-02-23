@@ -10,7 +10,7 @@ class Produtos extends Component {
 
     this.state = {
       cSelected: [],
-      status: 'loading',
+      status: 'success',
       data: null
     };
   }

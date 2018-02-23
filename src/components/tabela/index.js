@@ -2,20 +2,30 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Table } from 'reactstrap'
 
-function diferencaHoras(start, end) {
+
+var timeCalc = 0;
+
+function differenceHours(start, end) {
   var s = start.split(':');
   var e = end.split(':');
 
   var min = e[1] - s[1];
-  var hour_carry = 0;
+  var hour_ajust = 0;
   if (min < 0) {
     min += 60;
-    hour_carry += 1;
+    hour_ajust += 1;
   }
-  var hour = e[0] - s[0] - hour_carry;
+  var hour = e[0] - s[0] - hour_ajust;
   var diff = hour + ":" + min;
+  timeCalc = ((hour * 60) + min) * 0.0166667;
 
   return diff;
+}
+
+function totalValue(potency, quantity, dayvalues) {
+  var total = (potency * quantity * timeCalc.toFixed(3) * (dayvalues * 4)) / 1000;
+  console.log(total)
+  return total;
 }
 
 
@@ -31,7 +41,7 @@ class Tabela extends Component {
             <th className="text-center">QTD</th>
             <th className="text-center">HORÁRIOS</th>
             <th className="text-center">TEMPO(por dia)</th>
-            <th className="text-center">CONSUMO(kWh/dia)</th>
+            <th className="text-center">CONSUMO(kWh/mês)</th>
             { /* <th className="text-center">DIAS DE USO</th> */ }
             <th className="text-center"></th>
           </tr>
@@ -50,16 +60,18 @@ class Tabela extends Component {
                   { item.quantity }
                 </td>
                 <td className="text-center">
-                  { item.timeOn }
+                  { `${item.timeOn} a  ${item.longOn}` }
                 </td>
                 <td className="text-center">
-                  { diferencaHoras(item.timeOn, item.longOn) }
+                  { differenceHours(item.timeOn, item.longOn) }
                 </td>
                 <td className="text-center">
-                  { item.potency * item.quantity }
+                  { totalValue(item.potency, item.quantity, item.dayvalues) }
                 </td>
                 { /* <td className="text-center">{ item.useDays }</td> */ }
-                <button className="button-icon"><i className="material-icons-small text-danger">remove_circle</i></button>
+                <button className="button-icon" onClick={ () => this.props.removeObj(item) }>
+                  <i className="material-icons-small text-danger">remove_circle</i>
+                </button>
               </tr>
             )) }
         </tbody>

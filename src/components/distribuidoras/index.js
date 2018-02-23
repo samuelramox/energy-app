@@ -27,8 +27,10 @@ export default class Distribuidoras extends React.Component {
             Distribuidoras
           </DropdownToggle>
           <DropdownMenu className="px-4">
-            <DropdownItem>Another Action</DropdownItem>
-            <DropdownItem>Another Action</DropdownItem>
+            <DropdownItem>AES Eletropaulo</DropdownItem>
+            <DropdownItem>AES SUL (RGE SUL)</DropdownItem>
+            <DropdownItem>AmE</DropdownItem>
+            <DropdownItem>Enel RJ (Ampla)</DropdownItem>
           </DropdownMenu>
         </ButtonDropdown>
       </div>
