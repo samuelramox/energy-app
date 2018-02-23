@@ -1,6 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Table } from 'reactstrap';
+import { Table } from 'reactstrap'
+
+function diferencaHoras(start, end) {
+  var s = start.split(':');
+  var e = end.split(':');
+
+  var min = e[1] - s[1];
+  var hour_carry = 0;
+  if (min < 0) {
+    min += 60;
+    hour_carry += 1;
+  }
+  var hour = e[0] - s[0] - hour_carry;
+  var diff = hour + ":" + min;
+
+  return diff;
+}
 
 
 class Tabela extends Component {
@@ -9,29 +25,43 @@ class Tabela extends Component {
       <Table responsive hover>
         <thead className="bg-white text-blueYale small">
           <tr>
-            <th className="text-center">#</th>
+            { /* <th className="text-center">#</th> */ }
             <th>NOME</th>
             <th className="text-center">POTÊNCIA(W)</th>
             <th className="text-center">QTD</th>
             <th className="text-center">HORÁRIOS</th>
             <th className="text-center">TEMPO(por dia)</th>
             <th className="text-center">CONSUMO(kWh/dia)</th>
-            <th className="text-center">DIAS DE USO</th>
+            { /* <th className="text-center">DIAS DE USO</th> */ }
             <th className="text-center"></th>
           </tr>
         </thead>
         <tbody className="bg-blueSail text-blueYale small font-weight-bold">
-          <tr>
-            <th scope="row" className="text-center">1</th>
-            <td>Geladeira</td>
-            <td className="text-center">200</td>
-            <td className="text-center">01</td>
-            <td className="text-center">09:30</td>
-            <td className="text-center">02:00</td>
-            <td className="text-center">0.99</td>
-            <td className="text-center">@mdo</td>
-            <button className="button-icon"><i class="material-icons-small text-danger">remove_circle</i></button>
-          </tr>
+          { this.props.data && this.props.data.map((item) => (
+              <tr>
+                { /* <th scope="row" className="text-center">1</th> */ }
+                <td>
+                  { item.name }
+                </td>
+                <td className="text-center">
+                  { item.potency }
+                </td>
+                <td className="text-center">
+                  { item.quantity }
+                </td>
+                <td className="text-center">
+                  { item.timeOn }
+                </td>
+                <td className="text-center">
+                  { diferencaHoras(item.timeOn, item.longOn) }
+                </td>
+                <td className="text-center">
+                  { item.potency * item.quantity }
+                </td>
+                { /* <td className="text-center">{ item.useDays }</td> */ }
+                <button className="button-icon"><i className="material-icons-small text-danger">remove_circle</i></button>
+              </tr>
+            )) }
         </tbody>
       </Table>
       );

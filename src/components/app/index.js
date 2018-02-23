@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom'
 import HomeLayout from '../../layout/homeLayout'
 
 class App extends Component {
+
   render() {
     return (
       <div>
@@ -15,3 +16,4 @@ class App extends Component {
 }
 
 export default App;
+

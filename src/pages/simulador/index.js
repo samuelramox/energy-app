@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Button, Container, Row, Col } from 'reactstrap'
 import Produtos from '../../components/produtos'
 import Distribuidoras from '../../components/distribuidoras'
-import Tabela from '../../components/tabela'
 
 
 class Simulador extends Component {
@@ -23,14 +22,6 @@ class Simulador extends Component {
           <Row>
             <Col className="d-flex align-items-center flex-column">
             <Produtos/>
-            <Tabela />
-            <Container className="mb-4 mt-1">
-              <Row>
-                <Col className="d-flex align-items-center flex-column">
-                <Button color="success" href="/resultado">CALCULAR</Button>
-                </Col>
-              </Row>
-            </Container>
             </Col>
           </Row>
         </Container>

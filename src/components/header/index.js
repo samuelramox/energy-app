@@ -33,7 +33,7 @@ class Header extends Component {
     return (
       <div>
         <Navbar className="border border-dark border-top-0 border-right-0 border-left-0 pr-2 pl-0" style={ { fontSize: '0.8rem', fontWeight: 'bold' } }>
-          <Nav className="ml-auto" onClick={ this.handleClick } selectedKeys={ [this.state.isActive] }>
+          <Nav className="ml-auto" onClick={ this.handleClick } selectedkey={ [this.state.active] }>
             <NavItem key="home">
               <NavLink href="/" className="text-dark">HOME</NavLink>
             </NavItem>

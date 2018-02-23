@@ -49,7 +49,7 @@ class Resultado extends Component {
         <Container className="my-5">
           <Row>
             <Col className="d-flex align-items-center flex-column">
-            <Button color="success" className="px-5">FAZER NOVA SIMULAÇÃO</Button>
+            <Button color="success" className="px-5" href="/simulador">FAZER NOVA SIMULAÇÃO</Button>
             </Col>
           </Row>
         </Container>
