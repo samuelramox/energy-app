@@ -33,7 +33,7 @@ class Sobre extends Component {
               <CardBody>
                 <i className="material-icons text-blueSail">flash_on</i>
                 <CardTitle>Quem pode aderir?</CardTitle>
-                <CardText>A adesão é opcional e pode ser feita por clientes de baixa tensão, que tenham média anual de consumo superior a 500 kWh/mês.</CardText>
+                <CardText>A partir de 2018, a adesão será opcional e pode ser feita por clientes de baixa tensão, que tenham média anual de consumo superior a 500 kWh/mês.</CardText>
               </CardBody>
             </Card>
             </Col>
