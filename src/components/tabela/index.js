@@ -6,24 +6,24 @@ import { Table } from 'reactstrap'
 var timeCalc = 0;
 
 function differenceHours(start, end) {
-  var s = start.split(':');
-  var e = end.split(':');
+  let s = start.split(':');
+  let e = end.split(':');
 
-  var min = e[1] - s[1];
-  var hour_ajust = 0;
+  let min = e[1] - s[1];
+  let hour_ajust = 0;
   if (min < 0) {
     min += 60;
     hour_ajust += 1;
   }
-  var hour = e[0] - s[0] - hour_ajust;
-  var diff = hour + ":" + min;
+  let hour = e[0] - s[0] - hour_ajust;
+  let diff = hour + ":" + min;
   timeCalc = ((hour * 60) + min) * 0.0166667;
 
   return diff;
 }
 
 function totalValue(potency, quantity, dayvalues) {
-  var total = (potency * quantity * timeCalc.toFixed(3) * (dayvalues * 4)) / 1000;
+  let total = (potency * quantity * timeCalc.toFixed(3) * (dayvalues * 4)) / 1000;
   console.log(total)
   return total;
 }
